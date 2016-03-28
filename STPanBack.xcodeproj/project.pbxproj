@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18B4E9561CA90F44007D4388 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9551CA90F44007D4388 /* main.m */; };
+		18B4E9591CA90F44007D4388 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9581CA90F44007D4388 /* AppDelegate.m */; };
+		18B4E95C1CA90F45007D4388 /* STPanBack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E95A1CA90F45007D4388 /* STPanBack.xcdatamodeld */; };
+		18B4E95F1CA90F45007D4388 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E95E1CA90F45007D4388 /* MasterViewController.m */; };
+		18B4E9621CA90F45007D4388 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9611CA90F45007D4388 /* DetailViewController.m */; };
+		18B4E9651CA90F45007D4388 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E9631CA90F45007D4388 /* Main.storyboard */; };
+		18B4E9671CA90F45007D4388 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E9661CA90F45007D4388 /* Assets.xcassets */; };
+		18B4E96A1CA90F45007D4388 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E9681CA90F45007D4388 /* LaunchScreen.storyboard */; };
+		18B4E9751CA90F45007D4388 /* STPanBackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9741CA90F45007D4388 /* STPanBackTests.m */; };
+		18B4E9801CA90F45007D4388 /* STPanBackUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E97F1CA90F45007D4388 /* STPanBackUITests.m */; };
+		18B4E9911CA90F7F007D4388 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E98E1CA90F7F007D4388 /* BaseNavViewController.m */; };
+		18B4E9921CA90F7F007D4388 /* UIViewController+ScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9901CA90F7F007D4388 /* UIViewController+ScreenShot.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18B4E9711CA90F45007D4388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18B4E9491CA90F44007D4388 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18B4E9501CA90F44007D4388;
+			remoteInfo = STPanBack;
+		};
+		18B4E97C1CA90F45007D4388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18B4E9491CA90F44007D4388 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18B4E9501CA90F44007D4388;
+			remoteInfo = STPanBack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18B4E9511CA90F44007D4388 /* STPanBack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STPanBack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B4E9551CA90F44007D4388 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18B4E9571CA90F44007D4388 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18B4E9581CA90F44007D4388 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18B4E95B1CA90F45007D4388 /* STPanBack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = STPanBack.xcdatamodel; sourceTree = "<group>"; };
+		18B4E95D1CA90F45007D4388 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		18B4E95E1CA90F45007D4388 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		18B4E9601CA90F45007D4388 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		18B4E9611CA90F45007D4388 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		18B4E9641CA90F45007D4388 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18B4E9661CA90F45007D4388 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18B4E9691CA90F45007D4388 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18B4E96B1CA90F45007D4388 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B4E9701CA90F45007D4388 /* STPanBackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STPanBackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B4E9741CA90F45007D4388 /* STPanBackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STPanBackTests.m; sourceTree = "<group>"; };
+		18B4E9761CA90F45007D4388 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B4E97B1CA90F45007D4388 /* STPanBackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STPanBackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B4E97F1CA90F45007D4388 /* STPanBackUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STPanBackUITests.m; sourceTree = "<group>"; };
+		18B4E9811CA90F45007D4388 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B4E98D1CA90F7F007D4388 /* BaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
+		18B4E98E1CA90F7F007D4388 /* BaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavViewController.m; sourceTree = "<group>"; };
+		18B4E98F1CA90F7F007D4388 /* UIViewController+ScreenShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ScreenShot.h"; sourceTree = "<group>"; };
+		18B4E9901CA90F7F007D4388 /* UIViewController+ScreenShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ScreenShot.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18B4E94E1CA90F44007D4388 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B4E96D1CA90F45007D4388 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B4E9781CA90F45007D4388 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18B4E9481CA90F44007D4388 = {
+			isa = PBXGroup;
+			children = (
+				18B4E9531CA90F44007D4388 /* STPanBack */,
+				18B4E9731CA90F45007D4388 /* STPanBackTests */,
+				18B4E97E1CA90F45007D4388 /* STPanBackUITests */,
+				18B4E9521CA90F44007D4388 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18B4E9521CA90F44007D4388 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18B4E9511CA90F44007D4388 /* STPanBack.app */,
+				18B4E9701CA90F45007D4388 /* STPanBackTests.xctest */,
+				18B4E97B1CA90F45007D4388 /* STPanBackUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18B4E9531CA90F44007D4388 /* STPanBack */ = {
+			isa = PBXGroup;
+			children = (
+				18B4E98D1CA90F7F007D4388 /* BaseNavViewController.h */,
+				18B4E98E1CA90F7F007D4388 /* BaseNavViewController.m */,
+				18B4E98F1CA90F7F007D4388 /* UIViewController+ScreenShot.h */,
+				18B4E9901CA90F7F007D4388 /* UIViewController+ScreenShot.m */,
+				18B4E9571CA90F44007D4388 /* AppDelegate.h */,
+				18B4E9581CA90F44007D4388 /* AppDelegate.m */,
+				18B4E95D1CA90F45007D4388 /* MasterViewController.h */,
+				18B4E95E1CA90F45007D4388 /* MasterViewController.m */,
+				18B4E9601CA90F45007D4388 /* DetailViewController.h */,
+				18B4E9611CA90F45007D4388 /* DetailViewController.m */,
+				18B4E9631CA90F45007D4388 /* Main.storyboard */,
+				18B4E9661CA90F45007D4388 /* Assets.xcassets */,
+				18B4E9681CA90F45007D4388 /* LaunchScreen.storyboard */,
+				18B4E96B1CA90F45007D4388 /* Info.plist */,
+				18B4E95A1CA90F45007D4388 /* STPanBack.xcdatamodeld */,
+				18B4E9541CA90F44007D4388 /* Supporting Files */,
+			);
+			path = STPanBack;
+			sourceTree = "<group>";
+		};
+		18B4E9541CA90F44007D4388 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18B4E9551CA90F44007D4388 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18B4E9731CA90F45007D4388 /* STPanBackTests */ = {
+			isa = PBXGroup;
+			children = (
+				18B4E9741CA90F45007D4388 /* STPanBackTests.m */,
+				18B4E9761CA90F45007D4388 /* Info.plist */,
+			);
+			path = STPanBackTests;
+			sourceTree = "<group>";
+		};
+		18B4E97E1CA90F45007D4388 /* STPanBackUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18B4E97F1CA90F45007D4388 /* STPanBackUITests.m */,
+				18B4E9811CA90F45007D4388 /* Info.plist */,
+			);
+			path = STPanBackUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18B4E9501CA90F44007D4388 /* STPanBack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B4E9841CA90F45007D4388 /* Build configuration list for PBXNativeTarget "STPanBack" */;
+			buildPhases = (
+				18B4E94D1CA90F44007D4388 /* Sources */,
+				18B4E94E1CA90F44007D4388 /* Frameworks */,
+				18B4E94F1CA90F44007D4388 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STPanBack;
+			productName = STPanBack;
+			productReference = 18B4E9511CA90F44007D4388 /* STPanBack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18B4E96F1CA90F45007D4388 /* STPanBackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B4E9871CA90F45007D4388 /* Build configuration list for PBXNativeTarget "STPanBackTests" */;
+			buildPhases = (
+				18B4E96C1CA90F45007D4388 /* Sources */,
+				18B4E96D1CA90F45007D4388 /* Frameworks */,
+				18B4E96E1CA90F45007D4388 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18B4E9721CA90F45007D4388 /* PBXTargetDependency */,
+			);
+			name = STPanBackTests;
+			productName = STPanBackTests;
+			productReference = 18B4E9701CA90F45007D4388 /* STPanBackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18B4E97A1CA90F45007D4388 /* STPanBackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B4E98A1CA90F45007D4388 /* Build configuration list for PBXNativeTarget "STPanBackUITests" */;
+			buildPhases = (
+				18B4E9771CA90F45007D4388 /* Sources */,
+				18B4E9781CA90F45007D4388 /* Frameworks */,
+				18B4E9791CA90F45007D4388 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18B4E97D1CA90F45007D4388 /* PBXTargetDependency */,
+			);
+			name = STPanBackUITests;
+			productName = STPanBackUITests;
+			productReference = 18B4E97B1CA90F45007D4388 /* STPanBackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18B4E9491CA90F44007D4388 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = jryghq;
+				TargetAttributes = {
+					18B4E9501CA90F44007D4388 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					18B4E96F1CA90F45007D4388 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 18B4E9501CA90F44007D4388;
+					};
+					18B4E97A1CA90F45007D4388 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 18B4E9501CA90F44007D4388;
+					};
+				};
+			};
+			buildConfigurationList = 18B4E94C1CA90F44007D4388 /* Build configuration list for PBXProject "STPanBack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18B4E9481CA90F44007D4388;
+			productRefGroup = 18B4E9521CA90F44007D4388 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18B4E9501CA90F44007D4388 /* STPanBack */,
+				18B4E96F1CA90F45007D4388 /* STPanBackTests */,
+				18B4E97A1CA90F45007D4388 /* STPanBackUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18B4E94F1CA90F44007D4388 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B4E96A1CA90F45007D4388 /* LaunchScreen.storyboard in Resources */,
+				18B4E9671CA90F45007D4388 /* Assets.xcassets in Resources */,
+				18B4E9651CA90F45007D4388 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B4E96E1CA90F45007D4388 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B4E9791CA90F45007D4388 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18B4E94D1CA90F44007D4388 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B4E9621CA90F45007D4388 /* DetailViewController.m in Sources */,
+				18B4E95F1CA90F45007D4388 /* MasterViewController.m in Sources */,
+				18B4E9591CA90F44007D4388 /* AppDelegate.m in Sources */,
+				18B4E95C1CA90F45007D4388 /* STPanBack.xcdatamodeld in Sources */,
+				18B4E9921CA90F7F007D4388 /* UIViewController+ScreenShot.m in Sources */,
+				18B4E9561CA90F44007D4388 /* main.m in Sources */,
+				18B4E9911CA90F7F007D4388 /* BaseNavViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B4E96C1CA90F45007D4388 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B4E9751CA90F45007D4388 /* STPanBackTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B4E9771CA90F45007D4388 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B4E9801CA90F45007D4388 /* STPanBackUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18B4E9721CA90F45007D4388 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18B4E9501CA90F44007D4388 /* STPanBack */;
+			targetProxy = 18B4E9711CA90F45007D4388 /* PBXContainerItemProxy */;
+		};
+		18B4E97D1CA90F45007D4388 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18B4E9501CA90F44007D4388 /* STPanBack */;
+			targetProxy = 18B4E97C1CA90F45007D4388 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18B4E9631CA90F45007D4388 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18B4E9641CA90F45007D4388 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18B4E9681CA90F45007D4388 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18B4E9691CA90F45007D4388 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18B4E9821CA90F45007D4388 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18B4E9831CA90F45007D4388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18B4E9851CA90F45007D4388 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = STPanBack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jryghq.GServer.STPanBack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18B4E9861CA90F45007D4388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = STPanBack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jryghq.GServer.STPanBack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		18B4E9881CA90F45007D4388 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = STPanBackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jryghq.GServer.STPanBackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STPanBack.app/STPanBack";
+			};
+			name = Debug;
+		};
+		18B4E9891CA90F45007D4388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = STPanBackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jryghq.GServer.STPanBackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STPanBack.app/STPanBack";
+			};
+			name = Release;
+		};
+		18B4E98B1CA90F45007D4388 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = STPanBackUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jryghq.GServer.STPanBackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = STPanBack;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		18B4E98C1CA90F45007D4388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = STPanBackUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jryghq.GServer.STPanBackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = STPanBack;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18B4E94C1CA90F44007D4388 /* Build configuration list for PBXProject "STPanBack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B4E9821CA90F45007D4388 /* Debug */,
+				18B4E9831CA90F45007D4388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18B4E9841CA90F45007D4388 /* Build configuration list for PBXNativeTarget "STPanBack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B4E9851CA90F45007D4388 /* Debug */,
+				18B4E9861CA90F45007D4388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18B4E9871CA90F45007D4388 /* Build configuration list for PBXNativeTarget "STPanBackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B4E9881CA90F45007D4388 /* Debug */,
+				18B4E9891CA90F45007D4388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18B4E98A1CA90F45007D4388 /* Build configuration list for PBXNativeTarget "STPanBackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B4E98B1CA90F45007D4388 /* Debug */,
+				18B4E98C1CA90F45007D4388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18B4E95A1CA90F45007D4388 /* STPanBack.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18B4E95B1CA90F45007D4388 /* STPanBack.xcdatamodel */,
+			);
+			currentVersion = 18B4E95B1CA90F45007D4388 /* STPanBack.xcdatamodel */;
+			path = STPanBack.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 18B4E9491CA90F44007D4388 /* Project object */;
+}
