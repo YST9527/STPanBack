@@ -13,7 +13,7 @@ typedef NS_ENUM(NSUInteger, STPanType) {
     /**
      *  淡出
      */
-    STPanTypeFadeOut,
+    STPanTypeFadeOut = 0,
     /**
      *  侧滑
      */

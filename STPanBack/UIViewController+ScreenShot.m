@@ -8,24 +8,24 @@
 
 #import "UIViewController+ScreenShot.h"
 #import <objc/runtime.h>
-const void *PrefixShotKey;
-const void *CurrentShotKey;
+static const char PrefixShotKey;
+static const char CurrentShotKey;
 @implementation UIViewController (ScreenShot)
 
 - (void)setPrefixShot:(UIImage *)prefixShot {
-    objc_setAssociatedObject(self, PrefixShotKey, prefixShot, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &PrefixShotKey, prefixShot, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIImage *)prefixShot {
-    return objc_getAssociatedObject(self, PrefixShotKey);
+    return objc_getAssociatedObject(self, &PrefixShotKey);
 }
 
 - (void)setCurrentShot:(UIImage *)currentShot {
-    objc_setAssociatedObject(self, CurrentShotKey, currentShot, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &CurrentShotKey, currentShot, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIImage *)currentShot {
-    return objc_getAssociatedObject(self, CurrentShotKey);
+    return objc_getAssociatedObject(self, &CurrentShotKey);
 }
 
 @end
