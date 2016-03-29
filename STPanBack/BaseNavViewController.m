@@ -125,7 +125,7 @@
                 [self doMoveViewWithX:__DEVICE_WIDTH];
                 self.lastScreenShot.shadowView.alpha = 0;
             } completion:^(BOOL finished) {
-                [super popViewControllerAnimated:NO];
+                [self popViewControllerAnimated:NO];
                 [self completionPanBackAnimation];
                 self.isMoving = NO;
             }];
@@ -184,19 +184,21 @@
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    viewController.prefixShot = [self captureScreenShot];
-    self.topViewController.currentShot = [self captureScreenShot];
+    if (self.viewControllers.count != 0) {
+        viewController.prefixShot = [self captureScreenShot];
+        self.topViewController.currentShot = viewController.prefixShot;
+    }
     [super pushViewController:viewController animated:animated];
 }
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated {
-    if (animated) {
+    if (animated && self.viewControllers.count > 1) {
         [self initViewsWithImage:self.topViewController.prefixShot];
         [UIView animateWithDuration:__TIME animations:^{
             [self doMoveViewWithX:__DEVICE_WIDTH];
             self.lastScreenShot.shadowView.alpha = 0;
         } completion:^(BOOL finished) {
-            [super popViewControllerAnimated:NO];
+            [self popViewControllerAnimated:NO];
             [self completionPanBackAnimation];
         }];
         return nil;
@@ -206,13 +208,13 @@
 }
 
 - (NSArray<UIViewController *> *)popToRootViewControllerAnimated:(BOOL)animated{
-    if (animated) {
+    if (animated && self.viewControllers.count > 1) {
         [self initViewsWithImage:self.viewControllers[0].currentShot];
         [UIView animateWithDuration:__TIME animations:^{
             [self doMoveViewWithX:__DEVICE_WIDTH];
             self.lastScreenShot.shadowView.alpha = 0;
         } completion:^(BOOL finished) {
-            [super popToRootViewControllerAnimated:NO];
+            [self popToRootViewControllerAnimated:NO];
             [self completionPanBackAnimation];
         }];
         return nil;
@@ -228,7 +230,7 @@
             [self doMoveViewWithX:__DEVICE_WIDTH];
             self.lastScreenShot.shadowView.alpha = 0;
         } completion:^(BOOL finished) {
-            [super popToViewController:viewController animated:NO];
+            [self popToViewController:viewController animated:NO];
             [self completionPanBackAnimation];
         }];
         return nil;
@@ -257,6 +259,16 @@
     self.bgView.hidden = YES;
 }
 
+-(void)leftBarButtonItemClicked:(UIBarButtonItem *)item
+{
+    [self popViewControllerAnimated:YES];
+}
+
+-(UIViewController *)childViewControllerForStatusBarStyle
+{
+    return [self.viewControllers lastObject];
+}
+
 - (UIImage *)captureScreenShot
 {
     UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, self.view.opaque, 0.0);
@@ -265,6 +277,7 @@
     UIGraphicsEndImageContext();
     return img;
 }
+
 
 - (UIImage *)imageWithColor:(UIColor *)color
 {
@@ -277,9 +290,9 @@
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
     return image;
 }
-
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     return self.viewControllers.count != 1;
 }
