@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1811999D1D6322D500110974 /* UINavigationController+STTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811999C1D6322D500110974 /* UINavigationController+STTransitioning.m */; };
+		18119DA21D646F5400110974 /* BaseNavitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18119DA11D646F5400110974 /* BaseNavitationViewController.m */; };
 		18B4E9561CA90F44007D4388 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9551CA90F44007D4388 /* main.m */; };
 		18B4E9591CA90F44007D4388 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9581CA90F44007D4388 /* AppDelegate.m */; };
 		18B4E95C1CA90F45007D4388 /* STPanBack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E95A1CA90F45007D4388 /* STPanBack.xcdatamodeld */; };
@@ -17,8 +19,6 @@
 		18B4E96A1CA90F45007D4388 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E9681CA90F45007D4388 /* LaunchScreen.storyboard */; };
 		18B4E9751CA90F45007D4388 /* STPanBackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9741CA90F45007D4388 /* STPanBackTests.m */; };
 		18B4E9801CA90F45007D4388 /* STPanBackUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E97F1CA90F45007D4388 /* STPanBackUITests.m */; };
-		18B4E9911CA90F7F007D4388 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E98E1CA90F7F007D4388 /* BaseNavViewController.m */; };
-		18B4E9921CA90F7F007D4388 /* UIViewController+ScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9901CA90F7F007D4388 /* UIViewController+ScreenShot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1811999B1D6322D500110974 /* UINavigationController+STTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+STTransitioning.h"; sourceTree = "<group>"; };
+		1811999C1D6322D500110974 /* UINavigationController+STTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+STTransitioning.m"; sourceTree = "<group>"; };
+		18119DA01D646F5400110974 /* BaseNavitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavitationViewController.h; sourceTree = "<group>"; };
+		18119DA11D646F5400110974 /* BaseNavitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavitationViewController.m; sourceTree = "<group>"; };
 		18B4E9511CA90F44007D4388 /* STPanBack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STPanBack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B4E9551CA90F44007D4388 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18B4E9571CA90F44007D4388 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,10 +62,6 @@
 		18B4E97B1CA90F45007D4388 /* STPanBackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STPanBackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B4E97F1CA90F45007D4388 /* STPanBackUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STPanBackUITests.m; sourceTree = "<group>"; };
 		18B4E9811CA90F45007D4388 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18B4E98D1CA90F7F007D4388 /* BaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
-		18B4E98E1CA90F7F007D4388 /* BaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavViewController.m; sourceTree = "<group>"; };
-		18B4E98F1CA90F7F007D4388 /* UIViewController+ScreenShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ScreenShot.h"; sourceTree = "<group>"; };
-		18B4E9901CA90F7F007D4388 /* UIViewController+ScreenShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ScreenShot.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +112,10 @@
 		18B4E9531CA90F44007D4388 /* STPanBack */ = {
 			isa = PBXGroup;
 			children = (
-				18B4E98D1CA90F7F007D4388 /* BaseNavViewController.h */,
-				18B4E98E1CA90F7F007D4388 /* BaseNavViewController.m */,
-				18B4E98F1CA90F7F007D4388 /* UIViewController+ScreenShot.h */,
-				18B4E9901CA90F7F007D4388 /* UIViewController+ScreenShot.m */,
+				1811999B1D6322D500110974 /* UINavigationController+STTransitioning.h */,
+				1811999C1D6322D500110974 /* UINavigationController+STTransitioning.m */,
+				18119DA01D646F5400110974 /* BaseNavitationViewController.h */,
+				18119DA11D646F5400110974 /* BaseNavitationViewController.m */,
 				18B4E9571CA90F44007D4388 /* AppDelegate.h */,
 				18B4E9581CA90F44007D4388 /* AppDelegate.m */,
 				18B4E95D1CA90F45007D4388 /* MasterViewController.h */,
@@ -289,12 +289,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B4E9621CA90F45007D4388 /* DetailViewController.m in Sources */,
+				18119DA21D646F5400110974 /* BaseNavitationViewController.m in Sources */,
 				18B4E95F1CA90F45007D4388 /* MasterViewController.m in Sources */,
+				1811999D1D6322D500110974 /* UINavigationController+STTransitioning.m in Sources */,
 				18B4E9591CA90F44007D4388 /* AppDelegate.m in Sources */,
 				18B4E95C1CA90F45007D4388 /* STPanBack.xcdatamodeld in Sources */,
-				18B4E9921CA90F7F007D4388 /* UIViewController+ScreenShot.m in Sources */,
 				18B4E9561CA90F44007D4388 /* main.m in Sources */,
-				18B4E9911CA90F7F007D4388 /* BaseNavViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +518,7 @@
 				18B4E9861CA90F45007D4388 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B4E9871CA90F45007D4388 /* Build configuration list for PBXNativeTarget "STPanBackTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +527,7 @@
 				18B4E9891CA90F45007D4388 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B4E98A1CA90F45007D4388 /* Build configuration list for PBXNativeTarget "STPanBackUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +536,7 @@
 				18B4E98C1CA90F45007D4388 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
