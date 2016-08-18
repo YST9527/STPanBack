@@ -9,33 +9,6 @@
 #import "UINavigationController+STTransitioning.h"
 #import <objc/runtime.h>
 
-@interface STInitializeSet ()
-
-@property (nonatomic, assign) CGPoint startPoint;
-
-@property (nonatomic, strong) UIView *bgView;
-
-@property (nonatomic, assign) BOOL isMoving;
-
-@end
-
-@implementation STInitializeSet
-
-- (instancetype)init {
-    if (self = [super init]) {
-        _shadowColor = [UIColor blackColor];
-        _shadowAlpha = 0.4;
-        _offsetFactor = 0.6;
-        _scale = 0.07;
-        _animationTime = 0.23;
-        _startPoint = CGPointZero;
-        _isMoving = NO;
-    }
-    return self;
-}
-
-@end
-
 @interface STLastScreenShot : UIView
 
 @property (nonatomic, strong) UIImageView *imageView;
@@ -59,42 +32,57 @@
 
 @end
 
-static const char st_PanGestureKey;
-static const char st_InitializeSetKey;
-static const char st_SceenShotKey;
-
-@interface UINavigationController ()<UIGestureRecognizerDelegate>
+@interface STInitializeSet ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *st_panGesture;
 
+@property (nonatomic, assign) CGPoint startPoint;
+
+@property (nonatomic, strong) UIView *bgView;
+
 @property (nonatomic, strong) STLastScreenShot *screenShot;
+
+@property (nonatomic, assign) BOOL isMoving;
+
+@property (nonatomic, weak) UINavigationController *navigationController;
+
+@end
+
+@implementation STInitializeSet
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _shadowAlpha = 0.4;
+        _offsetFactor = 0.6;
+        _scale = 0.07;
+        _animationTime = 0.23;
+        _startPoint = CGPointZero;
+        _st_panGesture = [[UIScreenEdgePanGestureRecognizer alloc]init];
+        _st_panGesture.edges = UIRectEdgeLeft;
+        [_st_panGesture delaysTouchesBegan];
+        _st_panGesture.delegate = self;
+        _isMoving = NO;
+    }
+    return self;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([self.delegate respondsToSelector:@selector(gestureRecognizer:shouldReceiveTouch:)]) {
+        return [self.delegate gestureRecognizer:gestureRecognizer shouldReceiveTouch:touch];
+    }
+    return self.navigationController.viewControllers.count != 1;
+}
 
 @end
 
 
+static const char st_InitializeSetKey;
+
+@interface UINavigationController ()
+
+@end
 
 @implementation UINavigationController (STTransitioning)
-
-- (void)setSt_panGesture:(UIScreenEdgePanGestureRecognizer *)st_panGesture {
-    objc_setAssociatedObject(self, &st_PanGestureKey, st_panGesture, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UIScreenEdgePanGestureRecognizer *)st_panGesture {
-    return objc_getAssociatedObject(self, &st_PanGestureKey);
-}
-
-- (void)setScreenShot:(STLastScreenShot *)screenShot {
-    objc_setAssociatedObject(self, &st_SceenShotKey, screenShot, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (STLastScreenShot *)screenShot {
-    STLastScreenShot *screenShot = objc_getAssociatedObject(self, &st_SceenShotKey);
-    if (screenShot == nil) {
-        screenShot = [[STLastScreenShot alloc]initWithFrame:self.view.bounds];
-        self.screenShot = screenShot;
-    }
-    return screenShot;
-}
 
 - (STInitializeSet *)st_default {
     STInitializeSet *set = objc_getAssociatedObject(self, &st_InitializeSetKey);
@@ -102,26 +90,20 @@ static const char st_SceenShotKey;
         set = [[STInitializeSet alloc]init];
         set.minOffset = CGRectGetWidth(self.view.frame)/2;
         set.shotController = self;
-        set.bgView = [[UIView alloc]initWithFrame:self.view.bounds];
+        set.bgView = [[UIView alloc]initWithFrame:self.view.frame];
         set.bgView.backgroundColor = [UIColor blackColor];
+        set.screenShot = [[STLastScreenShot alloc]initWithFrame:set.bgView.bounds];
+        [set.bgView addSubview:set.screenShot];
+        set.navigationController = self;
+        [set.st_panGesture addTarget:self action:@selector(st_edgePanGestureRecognizer:)];
         objc_setAssociatedObject(self, &st_InitializeSetKey, set, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return set;
 }
 
 - (void)st_addEdgePanGestureRecognizer {
-    if (self.st_panGesture == nil) {
-        self.st_panGesture = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(st_edgePanGestureRecognizer:)];
-        self.st_panGesture.edges = UIRectEdgeLeft;
-        [self.st_panGesture delaysTouchesBegan];
-        self.st_panGesture.delegate = self;
-    }else {
-        [self.view removeGestureRecognizer:self.st_panGesture];
-    }
-    [self.view.superview insertSubview:self.st_default.bgView belowSubview:self.view];
-    [self.st_default.bgView addSubview:self.screenShot];
-    self.st_default.bgView.hidden = YES;
-    [self.view addGestureRecognizer:self.st_panGesture];
+    [self.view removeGestureRecognizer:self.st_default.st_panGesture];
+    [self.view addGestureRecognizer:self.st_default.st_panGesture];
 }
 
 - (void)st_edgePanGestureRecognizer:(UIScreenEdgePanGestureRecognizer *)panGesture {
@@ -139,7 +121,7 @@ static const char st_SceenShotKey;
             CGFloat time = (1-offsetX/CGRectGetWidth(self.view.frame))*self.st_default.animationTime;
             [UIView animateWithDuration:time animations:^{
                 [self moveViewWithLength:CGRectGetWidth(self.view.frame)];
-                self.screenShot.shadowView.alpha = 0;
+                self.st_default.screenShot.shadowView.alpha = 0;
             } completion:^(BOOL finished) {
                 [self popViewControllerAnimated:NO];
                 [self completionPanBackAnimation];
@@ -148,10 +130,9 @@ static const char st_SceenShotKey;
             CGFloat time = offsetX/CGRectGetWidth(self.view.frame)*self.st_default.animationTime;
             [UIView animateWithDuration:time animations:^{
                 [self moveViewWithLength:0];
-                self.screenShot.shadowView.alpha = self.st_default.shadowAlpha;
+                self.st_default.screenShot.shadowView.alpha = self.st_default.shadowAlpha;
             } completion:^(BOOL finished) {
                 self.st_default.isMoving = NO;
-                self.st_default.bgView.hidden = YES;
             }];
         }
         self.st_default.isMoving = NO;
@@ -160,57 +141,67 @@ static const char st_SceenShotKey;
         CGFloat time = offsetX/CGRectGetWidth(self.view.frame)*self.st_default.animationTime;
         [UIView animateWithDuration:time animations:^{
             [self moveViewWithLength:0];
-            self.screenShot.shadowView.alpha = self.st_default.shadowAlpha;
+            self.st_default.screenShot.shadowView.alpha = self.st_default.shadowAlpha;
         } completion:^(BOOL finished) {
             self.st_default.isMoving = NO;
-            self.st_default.bgView.hidden = YES;
+            [self.st_default.bgView removeFromSuperview];
         }];
         self.st_default.isMoving = NO;
     }
     if (self.st_default.isMoving) {
         [self moveViewWithLength:offsetX];
-        self.screenShot.shadowView.alpha = self.st_default.shadowAlpha*(1-offsetX/CGRectGetWidth(self.view.frame));
+        self.st_default.screenShot.shadowView.alpha = self.st_default.shadowAlpha*(1-offsetX/CGRectGetWidth(self.view.frame));
     }
 }
 
--(void)initViewsWithImage:(UIImage *)image {
-    self.st_default.bgView.hidden = NO;
-    self.screenShot.imageView.image = image;
-    self.screenShot.transform = CGAffineTransformMakeTranslation(CGRectGetWidth(self.view.frame)*self.st_default.offsetFactor, 0);
+- (void)initViewsWithImage:(UIImage *)image {
+    [self.st_default.bgView removeFromSuperview];
+    [self.view.superview insertSubview:self.st_default.bgView belowSubview:self.view];
+    self.st_default.screenShot.imageView.image = image;
+    self.st_default.screenShot.transform = CGAffineTransformMakeTranslation(-CGRectGetWidth(self.view.frame)*self.st_default.offsetFactor, 0);
 }
 
--(void)moveViewWithLength:(CGFloat)length {
+- (void)moveViewWithLength:(CGFloat)length {
     length = length > CGRectGetWidth(self.view.frame)?CGRectGetWidth(self.view.frame):length;
     length = length < 0?0:length;
     self.view.transform = CGAffineTransformMakeTranslation(length, 0);
-    self.screenShot.transform = CGAffineTransformMakeTranslation(-(CGRectGetWidth(self.view.frame)*self.st_default.offsetFactor)+length*self.st_default.offsetFactor, 0);
+    self.st_default.screenShot.transform = CGAffineTransformMakeTranslation(-(CGRectGetWidth(self.view.frame)*self.st_default.offsetFactor)+length*self.st_default.offsetFactor, 0);
 }
 
--(void)completionPanBackAnimation {
+- (void)completionPanBackAnimation {
     self.view.transform = CGAffineTransformIdentity;
-    self.st_default.bgView.hidden = YES;
+    [self.st_default.bgView removeFromSuperview];
 }
 
 - (void)st_enableEdgePan {
-    [self.view.superview insertSubview:self.st_default.bgView belowSubview:self.view];
-    self.st_panGesture.enabled = YES;
+    self.st_default.st_panGesture.enabled = YES;
 }
 
 - (void)st_unableEdgePan {
     [self.st_default.bgView removeFromSuperview];
-    self.st_panGesture.enabled = NO;
+    self.st_default.st_panGesture.enabled = NO;
+}
+
+- (void)st_pushViewController:(UIViewController *)viewController animated:(BOOL)animated completionHandler:(void(^)(void))completionHandler {
+    if (self.viewControllers.count != 0) {
+        viewController.st_prefixShot = [self captureScreenShot];
+        self.topViewController.st_currentShot = viewController.st_prefixShot;
+    }
+    completionHandler();
 }
 
 - (void)st_popViewControllerAnimated:(BOOL)animated completionHandler:(void(^)(void))completionHandler {
     if (animated) {
-        [self initViewsWithImage:self.viewControllers[0].st_currentShot];
+        [self initViewsWithImage:self.topViewController.st_prefixShot];
         [UIView animateWithDuration:self.st_default.animationTime animations:^{
             [self moveViewWithLength:CGRectGetWidth(self.view.frame)];
-            self.screenShot.shadowView.alpha = 0;
+            self.st_default.screenShot.shadowView.alpha = 0;
         } completion:^(BOOL finished) {
             completionHandler();
             [self completionPanBackAnimation];
         }];
+    }else {
+        completionHandler();
     }
 }
 
@@ -219,30 +210,36 @@ static const char st_SceenShotKey;
         [self initViewsWithImage:viewController.st_currentShot];
         [UIView animateWithDuration:self.st_default.animationTime animations:^{
             [self moveViewWithLength:CGRectGetWidth(self.view.frame)];
-            self.screenShot.shadowView.alpha = 0;
+            self.st_default.screenShot.shadowView.alpha = 0;
         } completion:^(BOOL finished) {
             completionHandler();
             [self completionPanBackAnimation];
         }];
+    }else {
+        completionHandler();
     }
 }
 
 - (void)st_popToRootViewControllerAnimated:(BOOL)animated completionHandler:(void(^)(void))completionHandler {
     if (animated) {
-        [self initViewsWithImage:self.topViewController.st_prefixShot];
+        [self initViewsWithImage:self.viewControllers[0].st_currentShot];
         [UIView animateWithDuration:self.st_default.animationTime animations:^{
             [self moveViewWithLength:CGRectGetWidth(self.view.frame)];
-            self.screenShot.shadowView.alpha = 0;
+            self.st_default.screenShot.shadowView.alpha = 0;
         } completion:^(BOOL finished) {
             completionHandler();
             [self completionPanBackAnimation];
         }];
+    }else {
+        completionHandler();
     }
 }
 
-
 - (UIImage *)captureScreenShot {
-    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, self.view.opaque, 0.0);
+    if (self.st_default.shotController == nil) {
+        self.st_default.shotController = self;
+    }
+    UIGraphicsBeginImageContextWithOptions(self.st_default.shotController.view.bounds.size, self.st_default.shotController.view.opaque, 0.0);
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

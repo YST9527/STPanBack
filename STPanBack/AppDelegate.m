@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
-#import "MasterViewController.h"
+#import "BaseNavitationViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -19,14 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
-    splitViewController.delegate = self;
-
-    UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-    MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    BaseNavitationViewController *baseNav = [[BaseNavitationViewController alloc]initWithRootViewController:[[UIViewController alloc]init]];
+    self.window.rootViewController = baseNav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
