@@ -12,8 +12,6 @@
 		18B4E9561CA90F44007D4388 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9551CA90F44007D4388 /* main.m */; };
 		18B4E9591CA90F44007D4388 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9581CA90F44007D4388 /* AppDelegate.m */; };
 		18B4E95C1CA90F45007D4388 /* STPanBack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E95A1CA90F45007D4388 /* STPanBack.xcdatamodeld */; };
-		18B4E95F1CA90F45007D4388 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E95E1CA90F45007D4388 /* MasterViewController.m */; };
-		18B4E9621CA90F45007D4388 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4E9611CA90F45007D4388 /* DetailViewController.m */; };
 		18B4E9651CA90F45007D4388 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E9631CA90F45007D4388 /* Main.storyboard */; };
 		18B4E9671CA90F45007D4388 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E9661CA90F45007D4388 /* Assets.xcassets */; };
 		18B4E96A1CA90F45007D4388 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E9681CA90F45007D4388 /* LaunchScreen.storyboard */; };
@@ -48,10 +46,6 @@
 		18B4E9571CA90F44007D4388 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18B4E9581CA90F44007D4388 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18B4E95B1CA90F45007D4388 /* STPanBack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = STPanBack.xcdatamodel; sourceTree = "<group>"; };
-		18B4E95D1CA90F45007D4388 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		18B4E95E1CA90F45007D4388 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		18B4E9601CA90F45007D4388 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		18B4E9611CA90F45007D4388 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		18B4E9641CA90F45007D4388 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18B4E9661CA90F45007D4388 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18B4E9691CA90F45007D4388 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,10 +112,6 @@
 				18119DA11D646F5400110974 /* BaseNavitationViewController.m */,
 				18B4E9571CA90F44007D4388 /* AppDelegate.h */,
 				18B4E9581CA90F44007D4388 /* AppDelegate.m */,
-				18B4E95D1CA90F45007D4388 /* MasterViewController.h */,
-				18B4E95E1CA90F45007D4388 /* MasterViewController.m */,
-				18B4E9601CA90F45007D4388 /* DetailViewController.h */,
-				18B4E9611CA90F45007D4388 /* DetailViewController.m */,
 				18B4E9631CA90F45007D4388 /* Main.storyboard */,
 				18B4E9661CA90F45007D4388 /* Assets.xcassets */,
 				18B4E9681CA90F45007D4388 /* LaunchScreen.storyboard */,
@@ -288,9 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B4E9621CA90F45007D4388 /* DetailViewController.m in Sources */,
 				18119DA21D646F5400110974 /* BaseNavitationViewController.m in Sources */,
-				18B4E95F1CA90F45007D4388 /* MasterViewController.m in Sources */,
 				1811999D1D6322D500110974 /* UINavigationController+STTransitioning.m in Sources */,
 				18B4E9591CA90F44007D4388 /* AppDelegate.m in Sources */,
 				18B4E95C1CA90F45007D4388 /* STPanBack.xcdatamodeld in Sources */,
