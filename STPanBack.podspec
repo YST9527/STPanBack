@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "STPanBack"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A simple to the classification of the navigation bar to add sliding back gesture."
   s.homepage     = "https://github.com/YST9527/STPanBack"
   s.license      = "MIT"
