@@ -157,6 +157,7 @@ static const char st_InitializeSetKey;
 - (void)initViewsWithImage:(UIImage *)image {
     [self.st_default.bgView removeFromSuperview];
     [self.view.superview insertSubview:self.st_default.bgView belowSubview:self.view];
+    self.st_default.screenShot.shadowView.alpha = self.st_default.shadowAlpha;
     self.st_default.screenShot.imageView.image = image;
     self.st_default.screenShot.transform = CGAffineTransformMakeTranslation(-CGRectGetWidth(self.view.frame)*self.st_default.offsetFactor, 0);
 }

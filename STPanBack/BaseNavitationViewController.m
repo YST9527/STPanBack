@@ -19,7 +19,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self st_addEdgePanGestureRecognizer];
     self.interactivePopGestureRecognizer.enabled = NO;
-    self.st_default.animationTime = 10;
+    self.st_default.animationTime = 0.3;
     // Do any additional setup after loading the view.
 }
 
