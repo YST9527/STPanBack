@@ -31,7 +31,7 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     [self st_pushViewController:viewController animated:animated completionHandler:^{
-        [super pushViewController:viewController animated:animated];
+        [super pushViewController:viewController animated:NO];
         //do other things
     }];
 }
